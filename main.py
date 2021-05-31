@@ -11,7 +11,6 @@ import datetime
 import json
 import sqlalchemy
 from utils.dao import DataAccessObject
-from utils.debugger import Debugger
 
 def init_connection_engine():
     pool = sqlalchemy.create_engine(
@@ -31,7 +30,6 @@ def init_connection_engine():
 
 db = init_connection_engine()
 dao = DataAccessObject(db)
-logger = Debugger()
 
 app = Flask(__name__)
 app.secret_key = '!secret'
